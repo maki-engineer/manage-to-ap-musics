@@ -1,24 +1,5 @@
 "use strict";
 
-// 全角→半角変換(英数字)
-exports.hankakuToZenkaku = function(str){
-  return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
-    return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-  });
-}
-
-// includes メソッドの派生形
-exports.isIncludes = (arr, target) => arr.some(el => target.includes(el))
-
-// 配列の重複チェック
-exports.existsSameValue = function(a){
-  var s = new Set(a);
-  return s.size != a.length;
-}
-
-// 配列を昇順に並び替える
-exports.compareFunc = (a, b) => a - b
-
 // 文字の類似値チェック
 exports.levenshteinDistance = function( str1, str2 ){ 
   var x = str1.length; 
@@ -45,27 +26,10 @@ exports.levenshteinDistance = function( str1, str2 ){
   return d[x][y];
 }
 
-// 配列を分割
-exports.sliceByNumber = function(array, number){
-  const length = Math.ceil(array.length / number)
-  return new Array(length).fill().map((_, i) =>
-    array.slice(i * number, (i + 1) * number)
-  )
-}
-
 // ひらがなをカタカナに変換
 exports.hiraToKana = function(str){
   return str.replace(/[\u3041-\u3096]/g, function(match) {
       var chr = match.charCodeAt(0) + 0x60;
       return String.fromCharCode(chr);
   });
-}
-
-// 配列シャッフル
-exports.shuffle = function([...array]){
-  for (let i = array.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
 }
