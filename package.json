@@ -1,0 +1,22 @@
+{
+  "name": "ap-music-programs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ap_list.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maki-engineer/manage-to-ap-musics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maki-engineer/manage-to-ap-musics/issues"
+  },
+  "homepage": "https://github.com/maki-engineer/manage-to-ap-musics#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.4"
+  }
+}
